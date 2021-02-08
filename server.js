@@ -22,7 +22,7 @@ const app=express();
 const expressLayout=require('express-ejs-layouts');
 const indexRouter=require('./routes/index')
 app.set('view engine','ejs');
-app.use(expressLayout);
+// app.use(expressLayout);
 app.set('views','views')
 app.use(express.static('public'))
 app.set('layout','layouts/layout')
