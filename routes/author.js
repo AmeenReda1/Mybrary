@@ -37,14 +37,17 @@ router.post('/',(req,res,next)=>{
         name:req.body.name,
         
     })
-    author.save()
-    console.log('hi from req.name',req.body.name)
-    
-    
+    try{
+        author.save()
+        res.redirect('authors')
+    }
+    catch{
+        
         res.render('authors/new',{
             authors:author,
             errorMessage:'Error create Author'
             })
+    }
     
     // author.save()
     // .then(auhtor=>{
